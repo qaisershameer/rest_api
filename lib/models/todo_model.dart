@@ -12,7 +12,7 @@ class ToDos {
       required this.title,
       required this.completed});
 
-  /// toJson
+  /// toJson to store/update/delete data (Post)
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -22,7 +22,7 @@ class ToDos {
     };
   }
 
-  /// fromJson
+  /// fromJson for fetched data view (GET)
   factory ToDos.fromJson(Map<String, dynamic> json) {
     return ToDos(
       userId: json['userId'],

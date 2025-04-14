@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:rest_api/const/const.dart';
+import 'package:rest_api/custom_widgets/show_snack_bar.dart';
 import '../models/todo_model.dart';
 import '../models/users_model.dart';
 
@@ -75,7 +76,6 @@ class ToDosController extends GetxController {
         image: "assets/flags/ca.png"),
   ].obs;
 
-
   /// todos initialized
   @override
   void onInit() {
@@ -98,48 +98,36 @@ class ToDosController extends GetxController {
         // +ve response successful action
         data = jsonDecode(response.body);
 
-        // all Todos value assign from fetched data
+        /// all Todos value assign from fetched data
         allTodo.value = data.map((json) => ToDos.fromJson(json)).toList();
 
-        // completed Todos value assign from all todos
-        completedToDo.value = allTodo.where((m) => m.completed == true).toList();
+          // completed Todos value assign from all todos
+          completedToDo.value = allTodo.where((filter) => filter.completed == true).toList();
 
-        // pending Todos value assign from all todos
-        pendingToDo.value = allTodo.where((m) => m.completed == false).toList();
+          // pending Todos value assign from all todos
+          pendingToDo.value = allTodo.where((filter) => filter.completed == false).toList();
 
-        // Extract userIds using Set from Json Response Data
+        /// Extract userIds using Set from Json Response Data
         Set<int> getUserIds = data.map((item) => item['userId'] as int).toSet();
 
-        // Set User Ids to List
-        userIds.value = getUserIds.toList();
+          // Set User Ids to List
+          userIds.value = getUserIds.toList();
 
-        showSnackBar('All ToDos Data successfully loaded: ${response.statusCode}', true);
+        /// +ve response success Snackbar
+        USnackBars.successSnackBar(title: 'All ToDos Data successfully loaded: ${response.statusCode}');
 
       } else {
 
-        /// -ve response error action
-        showSnackBar('Something went wrong: ${response.statusCode}', false);
+        /// -ve response error Snackbar
+        USnackBars.errorSnackBar(title: 'Something went wrong: ${response.statusCode}');
 
       }
     } catch (e) {
 
-      /// URL Error action
-      // showSnackBar('Error: $e', false);
+      /// URL Error Snackbar
+      USnackBars.errorSnackBar(title: 'Error: $e');
 
     }
   }
 
-  /// function to add SnackBar message
-  void showSnackBar(String message, bool isOk) {
-    final context = Get.context!;
-    // Message Show in Status Bar
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        duration: Duration(milliseconds: 700),
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: isOk ? Colors.green : Colors.red,
-        content: Text(message, style: TextStyle(color: Colors.white)),
-      ),
-    );
-  }
 }
