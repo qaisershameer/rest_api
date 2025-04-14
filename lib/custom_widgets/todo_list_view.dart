@@ -10,6 +10,8 @@ class ToDoListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: EdgeInsets.all(8.0),
+      shrinkWrap: true,
       itemCount: toDos.length,
       itemBuilder: (context, index) {
         /// assign toDoList to single_todo List variable
@@ -35,8 +37,8 @@ class ToDoListView extends StatelessWidget {
                 child: Text(todo.id.toString())),
 
             // Title
-            title: Text('Title: ${todo.title}',
-                style: TextStyle(color: Colors.white)),
+            title: Text(todo.title.toUpperCase(),
+                style: TextStyle(color: Colors.white, fontSize: 14.0)),
 
             // Status
             subtitle: Text(

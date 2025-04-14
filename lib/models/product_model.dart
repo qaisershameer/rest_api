@@ -2,7 +2,7 @@ class Product {
   /// Define final for required variables
   int id;
   String title;
-  double price;
+  num price;
   String description;
   String category;
   String image;
@@ -41,6 +41,7 @@ class Product {
     return Product(
       id: json['id'],
       title: json['title'],
+      // price: (json['price'] as num).toDouble(),
       price: json['price'],
       description: json['description'],
       category: json['category'],
@@ -56,14 +57,15 @@ class Product {
 
 /// Rating Class related to Product Class rating field so i declare class here
 class Rating {
-  final double rate;
+  final num rate;
   final int count;
 
   Rating({required this.rate, required this.count});
 
   factory Rating.fromJson(Map<String, dynamic> json) {
     return Rating(
-      rate: (json['rate'] as num).toDouble(),
+      // rate: (json['rate'] as num).toDouble(),
+      rate: json['rate'],
       count: json['count'],
     );
   }

@@ -16,14 +16,20 @@ class ToDosHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade400,
-      body: SizedBox(
+      body: Container(
         height: MediaQuery.sizeOf(context).height,
         width: MediaQuery.sizeOf(context).width,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.blue, Colors.deepPurple.shade800],
+          ),
+        ),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               /// Gap
               SizedBox(height: 24.0),
 
@@ -39,10 +45,8 @@ class ToDosHomeScreen extends StatelessWidget {
               /// Line Divider 01
               Padding(
                 padding: EdgeInsets.all(24.0),
-                child: Divider(
-                  color: Colors.deepPurple.shade200,
-                  thickness: 2.0,
-                ),
+                child:
+                    Divider(color: Colors.deepPurple.shade200, thickness: 2.0),
               ),
 
               /// Gap
@@ -72,21 +76,19 @@ class ToDosHomeScreen extends StatelessWidget {
               /// Line Divider 02
               Padding(
                 padding: EdgeInsets.all(24.0),
-                child: Divider(
-                  color: Colors.orange.shade200,
-                  thickness: 2.0,
-                ),
+                child: Divider(color: Colors.orange.shade200, thickness: 2.0),
               ),
 
               /// Navigate to User Wise todos Screen
               UButtonIcon(
-                  myOnPressed: () => Get.to(ToDosUsersScreen(allToDos: controller.allTodo,)),
+                  myOnPressed: () => Get.to(ToDosUsersScreen(
+                        allToDos: controller.allTodo,
+                      )),
                   buttonText: 'User Wise ToDos',
                   buttonIcon: Icon(
                     Icons.account_circle_outlined,
                     color: Colors.white,
                   )),
-
             ],
           ),
         ),

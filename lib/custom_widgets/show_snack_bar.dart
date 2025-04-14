@@ -10,7 +10,7 @@ class USnackBars {
         colorText: Colors.white,
         backgroundColor: Colors.orange,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 1),
+        duration: const Duration(seconds: 3),
         margin: const EdgeInsets.all(20),
         icon: const Icon(Icons.warning_amber, color: Colors.white));
   }
@@ -21,11 +21,11 @@ class USnackBars {
         isDismissible: true,
         shouldIconPulse: true,
         colorText: Colors.white,
-        backgroundColor: Color(0xFF0857A0),
+        backgroundColor: Color(0xFF0ED317),
         snackPosition: SnackPosition.BOTTOM,
         duration: Duration(seconds: duration),
         margin: const EdgeInsets.all(10),
-        icon: const Icon(Icons.check, color: Colors.white));
+        icon: const Icon(Icons.info_outlined, color: Colors.white));
   }
 
   /// Error Red Snack bar
