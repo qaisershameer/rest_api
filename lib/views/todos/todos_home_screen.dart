@@ -4,7 +4,6 @@ import 'package:rest_api/views/todos/todos_all_screen.dart';
 import 'package:rest_api/views/todos/todos_completed_screen.dart';
 import 'package:rest_api/views/todos/todos_pending_screen.dart';
 import 'package:rest_api/views/todos/todos_users_screen.dart';
-
 import '../../controllers/todos_controller.dart';
 import '../../custom_widgets/u_button_icon.dart';
 

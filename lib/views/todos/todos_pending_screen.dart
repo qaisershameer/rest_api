@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:rest_api/controllers/todos_controller.dart';
-
 import '../../custom_widgets/todo_list_view.dart';
 
 class TodosPendingScreen extends StatelessWidget {

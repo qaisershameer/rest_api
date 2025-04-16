@@ -7,7 +7,6 @@ class Product {
   String category;
   String image;
   Rating rating;
-  // Map<String, dynamic> rating;
 
   /// Constructor
   Product(
@@ -29,10 +28,6 @@ class Product {
       'category': category,
       'imageURL': image,
       'rating': rating.toJson(),
-      // 'rating': {
-      //   'rate': rating['rate'],
-      //   'count': rating['count'],
-      // },
     };
   }
 
@@ -41,16 +36,11 @@ class Product {
     return Product(
       id: json['id'],
       title: json['title'],
-      // price: (json['price'] as num).toDouble(),
       price: json['price'],
       description: json['description'],
       category: json['category'],
       image: json['image'],
-      rating: Rating.fromJson(json['rating']), // using Rating model
-      // rating: {
-      //   'rate': json['rating']['rate'],
-      //   'count': json['rating']['count'],
-      // },
+      rating: Rating.fromJson(json['rating']),
     );
   }
 }

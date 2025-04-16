@@ -14,8 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () {
-        Widget activeScreen =
-            ToDosHomeScreen();
+        Widget activeScreen = ToDosHomeScreen();
         var activePageTitle = 'API Fetch ToDos';
 
         if (controller.selectedPageIndex.value == 1) {
@@ -28,10 +27,7 @@ class HomeScreen extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: Text(
-              activePageTitle,
-              style: TextStyle(color: Colors.white),
-            ),
+            title: Text(activePageTitle, style: TextStyle(color: Colors.white)),
             centerTitle: true,
             backgroundColor: Colors.blue.shade800,
           ),

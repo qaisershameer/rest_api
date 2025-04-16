@@ -10,7 +10,7 @@ class USnackBars {
         colorText: Colors.white,
         backgroundColor: Colors.orange,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: 2),
         margin: const EdgeInsets.all(20),
         icon: const Icon(Icons.warning_amber, color: Colors.white));
   }

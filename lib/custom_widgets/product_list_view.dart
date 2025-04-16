@@ -53,7 +53,7 @@ class ProductListView extends StatelessWidget {
                             ),
                           ),
 
-                          // Product Price
+                          /// Product Price
                           Text(
                             '\$${product.price}',
                             style: GoogleFonts.lato(
@@ -65,6 +65,7 @@ class ProductListView extends StatelessWidget {
                         ],
                       ),
 
+                      /// Product Title
                       Text(
                         product.title,
                         style: GoogleFonts.lato(
@@ -75,7 +76,7 @@ class ProductListView extends StatelessWidget {
                         maxLines: 2,
                       ),
 
-                      // Product Description
+                      /// Product Description
                       Expanded(
                         child: Text(
                           product.description,
@@ -86,7 +87,7 @@ class ProductListView extends StatelessWidget {
                         ),
                       ),
 
-                      // Product Category
+                      /// Product Category
                       Text(
                         'Category: ${product.category}',
                         style: GoogleFonts.lato(
@@ -95,7 +96,7 @@ class ProductListView extends StatelessWidget {
                         ),
                       ),
 
-                      // Product Rating Count
+                      /// Product Rating Count
                       Text(
                         'Rating: ${product.rating.rate} ☆ (${product.rating.count} reviews)',
                         style: GoogleFonts.lato(

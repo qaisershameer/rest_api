@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rest_api/models/todo_model.dart';
-
 import '../../custom_widgets/todo_list_view.dart';
 
 class TodosUserWiseScreen extends StatelessWidget {

@@ -47,7 +47,7 @@ class ProductHomeScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(24.0),
                 child:
-                Divider(color: Colors.deepPurple.shade200, thickness: 2.0),
+                    Divider(color: Colors.deepPurple.shade200, thickness: 2.0),
               ),
 
               /// Gap
@@ -95,8 +95,8 @@ class ProductHomeScreen extends StatelessWidget {
               /// Navigate to User Wise todos Screen
               UButtonIcon(
                   myOnPressed: () => Get.to(ProductCategoryScreen(
-                    allProduct: controller.allProducts,
-                  )),
+                        allProduct: controller.allProducts,
+                      )),
                   buttonText: 'Products Categories',
                   buttonIcon: Icon(
                     Icons.category,

@@ -1,4 +1,5 @@
 class ToDos {
+
   /// Define final for required variables
   final int userId;
   final int id;
